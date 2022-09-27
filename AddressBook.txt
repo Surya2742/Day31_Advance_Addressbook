@@ -75,3 +75,27 @@ mysql> select * from addressbookdb;
 | vaibhav   | vishwakarma | jhagadia | Ankleshwar | gujarat     | 393110  | 8866030943  | vaibhavvishwakarma030@gmail.com |
 +-----------+-------------+----------+------------+-------------+---------+-------------+---------------------------------+
 2 rows in set (0.00 sec)
+
+
+mysql> insert into addressBookdb (FirstName, LastName, Address, City, State, PinCode, PhoneNumber, Email) values
+    -> ('prasad', 'mondkar', 'navsari', 'surat', 'gujarat', '393171', '8237144663', 'abhi@27yahoo.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from addressbookdb;
++-----------+-------------+----------+------------+-------------+---------+-------------+---------------------------------+
+| FirstName | LastName    | Address  | city       | State       | PinCode | PhoneNumber | Email                           |
++-----------+-------------+----------+------------+-------------+---------+-------------+---------------------------------+
+| Surya     | Vishwakarma | boisar   | palghar    | maharashtra | 401506  | 8793187950  | boby7724284@gmail.com           |
+| vaibhav   | vishwakarma | jhagadia | Ankleshwar | gujarat     | 393110  | 8866030943  | vaibhavvishwakarma030@gmail.com |
+| prasad    | mondkar     | navsari  | surat      | gujarat     | 393171  | 8237144663  | abhi@27yahoo.com                |
++-----------+-------------+----------+------------+-------------+---------+-------------+---------------------------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from addressbookdb where city = 'surat' or State = 'maharashtra';
++-----------+-------------+---------+---------+-------------+---------+-------------+-----------------------+
+| FirstName | LastName    | Address | city    | State       | PinCode | PhoneNumber | Email                 |
++-----------+-------------+---------+---------+-------------+---------+-------------+-----------------------+
+| Surya     | Vishwakarma | boisar  | palghar | maharashtra | 401506  | 8793187950  | boby7724284@gmail.com |
+| prasad    | mondkar     | navsari | surat   | gujarat     | 393171  | 8237144663  | abhi@27yahoo.com      |
++-----------+-------------+---------+---------+-------------+---------+-------------+-----------------------+
+2 rows in set (0.00 sec)
