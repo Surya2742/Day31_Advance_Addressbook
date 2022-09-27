@@ -155,3 +155,48 @@ mysql> select * from addressbookdb where city = 'surat' order by FirstName;
 | raj       | nadar    | navsari | surat | gujarat | 393171  | 9960715539  | rajkamal43@27yahoo.com      |
 +-----------+----------+---------+-------+---------+---------+-------------+-----------------------------+
 3 rows in set (0.00 sec)
+
+
+mysql> alter table addressbookdb add type varchar(25) after LastName;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from addressbookdb;
++-----------+-------------+------+----------+------------+-------------+---------+-------------+---------------------------------+
+| FirstName | LastName    | type | Address  | city       | State       | PinCode | PhoneNumber | Email                           |
++-----------+-------------+------+----------+------------+-------------+---------+-------------+---------------------------------+
+| Surya     | Vishwakarma | NULL | boisar   | palghar    | maharashtra | 401506  | 8793187950  | boby7724284@gmail.com           |
+| vaibhav   | vishwakarma | NULL | jhagadia | Ankleshwar | gujarat     | 393110  | 8866030943  | vaibhavvishwakarma030@gmail.com |
+| prasad    | mondkar     | NULL | navsari  | surat      | gujarat     | 393171  | 8237144663  | abhi@27yahoo.com                |
+| ajay      | mondkar     | NULL | navsari  | surat      | gujarat     | 393171  | 8605038025  | mondkarprasad23@27yahoo.com     |
+| raj       | nadar       | NULL | navsari  | surat      | gujarat     | 393171  | 9960715539  | rajkamal43@27yahoo.com          |
++-----------+-------------+------+----------+------------+-------------+---------+-------------+---------------------------------+
+5 rows in set (0.00 sec)
+
+mysql> update addressbookdb set type = 'family' where FirstName = 'vaibhav';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update addressbookdb set type = 'friend' where FirstName = 'prasad';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update addressbookdb set type = 'profession' where FirstName = 'ajay';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update addressbookdb set type = 'profession' where FirstName = 'raj';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbookdb;
++-----------+-------------+------------+----------+------------+-------------+---------+-------------+---------------------------------+
+| FirstName | LastName    | type       | Address  | city       | State       | PinCode | PhoneNumber | Email                           |
++-----------+-------------+------------+----------+------------+-------------+---------+-------------+---------------------------------+
+| Surya     | Vishwakarma | NULL       | boisar   | palghar    | maharashtra | 401506  | 8793187950  | boby7724284@gmail.com           |
+| vaibhav   | vishwakarma | family     | jhagadia | Ankleshwar | gujarat     | 393110  | 8866030943  | vaibhavvishwakarma030@gmail.com |
+| prasad    | mondkar     | friend     | navsari  | surat      | gujarat     | 393171  | 8237144663  | abhi@27yahoo.com                |
+| ajay      | mondkar     | profession | navsari  | surat      | gujarat     | 393171  | 8605038025  | mondkarprasad23@27yahoo.com     |
+| raj       | nadar       | profession | navsari  | surat      | gujarat     | 393171  | 9960715539  | rajkamal43@27yahoo.com          |
++-----------+-------------+------------+----------+------------+-------------+---------+-------------+---------------------------------+
+5 rows in set (0.00 sec)
