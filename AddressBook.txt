@@ -200,3 +200,28 @@ mysql> select * from addressbookdb;
 | raj       | nadar       | profession | navsari  | surat      | gujarat     | 393171  | 9960715539  | rajkamal43@27yahoo.com          |
 +-----------+-------------+------------+----------+------------+-------------+---------+-------------+---------------------------------+
 5 rows in set (0.00 sec)
+
+
+mysql> select count(*) from addressbookdb where type = 'famliy';
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from addressbookdb where type = 'profession';
++----------+
+| count(*) |
++----------+
+|        2 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from addressbookdb where type = 'friend';
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
