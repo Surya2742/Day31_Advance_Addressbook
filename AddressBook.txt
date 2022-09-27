@@ -126,3 +126,32 @@ mysql> select * from addressbookdb;
 | prasad    | mondkar     | navsari  | surat      | gujarat     | 393171  | 8237144663  | abhi@27yahoo.com                |
 +-----------+-------------+----------+------------+-------------+---------+-------------+---------------------------------+
 3 rows in set (0.00 sec)
+
+
+mysql> insert into addressBookdb (FirstName, LastName, Address, City, State, PinCode, PhoneNumber, Email) values
+    -> ('ajay', 'mondkar', 'navsari', 'surat', 'gujarat', '393171', '8605038025', 'mondkarprasad23@27yahoo.com'),
+    -> ('raj', 'nadar', 'navsari', 'surat', 'gujarat', '393171', '9960715539', 'rajkamal43@27yahoo.com');
+Query OK, 2 rows affected (0.00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from addressbookdb;
++-----------+-------------+----------+------------+-------------+---------+-------------+---------------------------------+
+| FirstName | LastName    | Address  | city       | State       | PinCode | PhoneNumber | Email                           |
++-----------+-------------+----------+------------+-------------+---------+-------------+---------------------------------+
+| Surya     | Vishwakarma | boisar   | palghar    | maharashtra | 401506  | 8793187950  | boby7724284@gmail.com           |
+| vaibhav   | vishwakarma | jhagadia | Ankleshwar | gujarat     | 393110  | 8866030943  | vaibhavvishwakarma030@gmail.com |
+| prasad    | mondkar     | navsari  | surat      | gujarat     | 393171  | 8237144663  | abhi@27yahoo.com                |
+| ajay      | mondkar     | navsari  | surat      | gujarat     | 393171  | 8605038025  | mondkarprasad23@27yahoo.com     |
+| raj       | nadar       | navsari  | surat      | gujarat     | 393171  | 9960715539  | rajkamal43@27yahoo.com          |
++-----------+-------------+----------+------------+-------------+---------+-------------+---------------------------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from addressbookdb where city = 'surat' order by FirstName;
++-----------+----------+---------+-------+---------+---------+-------------+-----------------------------+
+| FirstName | LastName | Address | city  | State   | PinCode | PhoneNumber | Email                       |
++-----------+----------+---------+-------+---------+---------+-------------+-----------------------------+
+| ajay      | mondkar  | navsari | surat | gujarat | 393171  | 8605038025  | mondkarprasad23@27yahoo.com |
+| prasad    | mondkar  | navsari | surat | gujarat | 393171  | 8237144663  | abhi@27yahoo.com            |
+| raj       | nadar    | navsari | surat | gujarat | 393171  | 9960715539  | rajkamal43@27yahoo.com      |
++-----------+----------+---------+-------+---------+---------+-------------+-----------------------------+
+3 rows in set (0.00 sec)
