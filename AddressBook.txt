@@ -14,3 +14,19 @@ mysql> show databases;
 | sys                |
 +--------------------+
 7 rows in set (0.00 sec)
+
+
+mysql> use addressbookdb;
+Database changed
+
+CREATE TABLE addressbookdb(
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    Address VARCHAR(100) NOT NULL,
+    city VARCHAR(20) NOT NULL,
+    State VARCHAR(20) NOT NULL,
+    PinCode VARCHAR(20) NOT NULL,
+    PhoneNumber VARCHAR(20) NOT NULL,
+    Email VARCHAR(50) NOT NULL
+);
+
